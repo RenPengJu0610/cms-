@@ -13,7 +13,7 @@
 	<div class="container">
 
 		<div class="leftsidebar_box">
-			<a href="/static/admin/main.html" target="main"><div class="line">
+			<a href="#"><div class="line">
 					<img src="/static/admin/img/coin01.png" />&nbsp;&nbsp;首页
 				</div></a>
 			<!-- <dl class="system_log">
@@ -23,6 +23,26 @@
 		<dl class="system_log">
 				<dt>
 					<img class="icon1" src="/static/admin/img/coin03.png" /><img class="icon2"
+						src="/static/admin/img/coin04.png" /> 新闻分类管理<img class="icon3"
+						src="/static/admin/img/coin19.png" /><img class="icon4"
+						src="/static/admin/img/coin20.png" />
+				</dt>
+				<dd>
+					<img class="coin11" src="/static/admin/img/coin111.png" />
+					<img class="coin22" src="/static/admin/img/coin222.png" />
+					<a class="cks" href="{{url('newclass/index')}}" target="main">新闻分类展示</a>
+					<img class="icon5" src="/static/admin/img/coin21.png" />
+				</dd>
+				<dd>
+					<img class="coin11" src="/static/admin/img/coin111.png" />
+					<img class="coin22" src="/static/admin/img/coin222.png" />
+					<a class="cks" href="{{url('newclass/create')}}" target="main">新闻分类添加</a>
+					<img class="icon5" src="/static/admin/img/coin21.png" />
+				</dd>
+			</dl>
+			<dl class="system_log">
+				<dt>
+					<img class="icon1" src="/static/admin/img/coin03.png" /><img class="icon2"
 						src="/static/admin/img/coin04.png" /> 新闻管理<img class="icon3"
 						src="/static/admin/img/coin19.png" /><img class="icon4"
 						src="/static/admin/img/coin20.png" />
@@ -30,27 +50,14 @@
 				<dd>
 					<img class="coin11" src="/static/admin/img/coin111.png" />
 					<img class="coin22" src="/static/admin/img/coin222.png" />
-					<a class="cks" href="/static/admin/list.html" target="main">新闻分类展示</a>
+					<a class="cks" href="{{url('news/index')}}" target="main">新闻列表展示</a>
 					<img class="icon5" src="/static/admin/img/coin21.png" />
 				</dd>
 				<dd>
 					<img class="coin11" src="/static/admin/img/coin111.png" />
 					<img class="coin22" src="/static/admin/img/coin222.png" />
-					<a class="cks" href="/static/admin/list.html" target="main">新闻添加</a>
+					<a class="cks" href="{{url('news/insert')}}" target="main">新闻添加</a>
 					<img class="icon5" src="/static/admin/img/coin21.png" />
-				</dd>
-			</dl>
-			<dl class="system_log">
-				<dt>
-					<img class="icon1" src="/static/admin/img/coin03.png" /><img class="icon2"
-						src="/static/admin/img/coin04.png" /> 网站管理<img class="icon3"
-						src="/static/admin/img/coin19.png" /><img class="icon4"
-						src="/static/admin/img/coin20.png" />
-				</dt>
-				<dd>
-					<img class="coin11" src="/static/admin/img/coin111.png" /><img class="coin22"
-						src="/static/admin/img/coin222.png" /><a class="cks" href="/static/admin/user.html"
-						target="main">管理员管理</a><img class="icon5" src="/static/admin/img/coin21.png" />
 				</dd>
 			</dl>
 			<dl class="system_log">

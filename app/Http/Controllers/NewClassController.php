@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\NewClass;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\NewClass;
-use App\News;
-class NewsController extends Controller
+
+class NewClassController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,10 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $data = News::select('news.*','newclass.newclass_name')->leftjoin('newclass','news.newclass_id','=','newclass.newclass_id')
-                      ->paginate(3);
-        return view('admin/news/index',['data'=>$data]);
+        $data   =   NewClass::get();
+        $arr    =   contentNew($data);
+        // dd($arr);
+        return view('admin/newclass/index',['data'=>$arr]);
     }
 
     /**
@@ -27,36 +27,24 @@ class NewsController extends Controller
      */
     public function create()
     {
-        return view('admin/news/create');
+        $res    =   NewClass::get();
+        // dd($res);
+        $arr    =   contentNew($res);
+        return view('admin/newclass/create',['arr'=>$arr]);
     }
-    public function head(){
-        return view('admin/news/head');
-    }
-    public function left(){
-        return view('admin/news/left');
-    }
-    public function main(){
-        return view('admin/news/main');
-    }
+
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function insert()
-    {
-        $data   =   NewClass::get();
-        $arr    =   contentNew($data);
-        return view('admin/news/insert',['arr'=>$arr]);
-    }
     public function store(Request $request)
     {
-        $post   =   $request->except('_token');
-        // dd($post);
-        $res    =   News::insert($post);
+        $post = $request->except('_token');
+        $res  = Newclass::insert($post);
         if($res){
-            return redirect('news/index');
+            return redirect('newclass/index');
         }
     }
 
@@ -79,10 +67,11 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        $data   =   NewClass::get();
-        $arr    =   contentNew($data);
-        $res    =   News::find($id);
-        return view('admin/news/edit',['arr'=>$arr,'res'=>$res]);
+        $data   =   NewClass::find($id);
+        $res    =   NewClass::get();
+        $arr    =   contentNew($res);
+        // dd($arr);
+        return view('admin/newclass/edit',['arr'=>$arr,'data'=>$data]);
     }
 
     /**
@@ -95,10 +84,9 @@ class NewsController extends Controller
     public function update(Request $request, $id)
     {
         $post   =   $request->except('_token');
-        // dd($post);
-        $res    =   News::where('new_id','=',$id)->update($post);
+        $res    =   NewClass::where('newclass_id','=',$id)->update($post);
         if($res !=false){
-            return redirect('news/index');
+            return redirect('newclass/index');
         }
     }
 
@@ -110,9 +98,15 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        $res    =   News::destroy($id);
+        $count    =   NewClass::where('pid','=',$id)->count();
+        if($count){
+            echo json_encode(['code'=>1,'msg'=>'不能删除']);die;
+        }
+        $res    =   NewClass::destroy($id);
         if($res){
-            return redirect('news/index');
+            echo json_encode(['code'=>200,'msg'=>'删除成功']);
+        }else{
+            echo json_encode(['code'=>2,'msg'=>'删除失败']);
         }
     }
 }

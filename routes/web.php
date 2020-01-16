@@ -22,21 +22,19 @@ Route::prefix('news')->group(function(){
     Route::get('head','NewsController@head');
     Route::get('left','NewsController@left');
     Route::get('main','NewsController@main');
-    Route::post('store','NewsController@store');
     Route::get('index','NewsController@index');
+    Route::post('store','NewsController@store');
+    Route::get('insert','NewsController@insert');
     Route::get('edit/{id}','NewsController@edit');
     Route::get('del/{id}','NewsController@destroy');
     Route::post('update/{id}','NewsController@update');
 });
-Route::prefix('news')->group(function(){
-    Route::get('create','NewsController@create');
-    Route::get('head','NewsController@head');
-    Route::get('left','NewsController@left');
-    Route::get('main','NewsController@main');
-    Route::post('store','NewsController@store');
-    Route::get('index','NewsController@index');
-    Route::get('edit/{id}','NewsController@edit');
-    Route::get('del/{id}','NewsController@destroy');
-    Route::post('update/{id}','NewsController@update');
+Route::prefix('newclass')->group(function(){
+    Route::get('create','NewClassController@create');
+    Route::post('store','NewClassController@store');
+    Route::get('index','NewClassController@index');
+    Route::get('edit/{id}','NewClassController@edit');
+    Route::get('del/{id}','NewClassController@destroy');
+    Route::post('update/{id}','NewClassController@update');
 });
 
