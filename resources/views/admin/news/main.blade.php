@@ -3,9 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>首页引用-有点</title>
-<link rel="stylesheet" type="text/css" href="/static/admin/css.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/css/css.css" />
 </head>
-
 <body>
 	<div id="pageAll">
 		<div class="page">
