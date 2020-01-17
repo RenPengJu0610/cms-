@@ -49,26 +49,33 @@
 				</dt>
 				<dd>
 					<img class="coin11" src="/static/admin/img/coin111.png" /><img class="coin22"
-						src="/static/admin/img/coin222.png" /><a class="cks" href="/static/admin/user.html"
-						target="main">管理员管理</a><img class="icon5" src="/static/admin/img/coin21.png" />
+						src="/static/admin/img/coin222.png" /> <a class="cks" href="{{url('admin/create')}}"
+						target="main"> 管理员添加</a><img class="icon5" src="/static/admin/img/coin21.png" />
 				</dd>
+				<dd>
+					<img class="coin11" src="/static/admin/img/coin111.png" /><img class="coin22"
+						src="/static/admin/img/coin222.png" /><a class="cks" href="{{url('admin')}}"
+						target="main">管理员展示</a><img class="icon5" src="/static/admin/img/coin21.png" />
+				</dd>
+			</dl>
+			
 			</dl>
 			<dl class="system_log">
 				<dt>
 					<img class="icon1" src="/static/admin/img/coin05.png" /><img class="icon2"
-						src="/static/admin/img/coin06.png" /> 公共管理<img class="icon3"
+						src="/static/admin/img/coin06.png" /> 友链<img class="icon3"
 						src="/static/admin/img/coin19.png" /><img class="icon4"
 						src="/static/admin/img/coin20.png" />
 				</dt>
 				<dd>
 					<img class="coin11" src="/static/admin/img/coin111.png" /><img class="coin22"
 						src="/static/admin/img/coin222.png" /><a class="cks" href="/static/admin/banner.html"
-						target="main">广告管理</a><img class="icon5" src="/static/admin/img/coin21.png" />
+						target="main">友链添加</a><img class="icon5" src="/static/admin/img/coin21.png" />
 				</dd>
 				<dd>
 					<img class="coin11" src="/static/admin/img/coin111.png" /><img class="coin22"
 						src="/static/admin/img/coin222.png" /><a class="cks" href="/static/admin/opinion.html"
-						target="main">意见管理</a><img class="icon5" src="/static/admin/img/coin21.png" />
+						target="main">友链展示</a><img class="icon5" src="/static/admin/img/coin21.png" />
 				</dd>
 			</dl>
 			<dl class="system_log">

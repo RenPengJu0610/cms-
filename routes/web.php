@@ -40,3 +40,16 @@ Route::prefix('news')->group(function(){
     Route::post('update/{id}','NewsController@update');
 });
 
+//管理员模块
+Route::prefix('admin')->group(function () {
+   Route::get('/','Admin\AdminController@index'); //列表
+   Route::get('create','Admin\AdminController@create'); //添加
+   Route::post('store','Admin\AdminController@store');  //执行添加
+   Route::get('destroy/{id}','Admin\AdminController@destroy');  //执行删除
+   Route::get('edit/{id}','Admin\AdminController@edit');  //编辑
+   Route::post('update/{id}','Admin\AdminController@update');  //执行编辑
+   Route::post('checkAccount','Admin\AdminController@checkAccount');  //验证账号唯一
+});
+
+
+
